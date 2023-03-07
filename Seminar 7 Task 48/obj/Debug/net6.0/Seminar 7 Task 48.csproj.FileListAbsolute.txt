@@ -1,0 +1,15 @@
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\bin\Debug\net6.0\Seminar 7 Task 48.exe
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\bin\Debug\net6.0\Seminar 7 Task 48.deps.json
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\bin\Debug\net6.0\Seminar 7 Task 48.runtimeconfig.json
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\bin\Debug\net6.0\Seminar 7 Task 48.dll
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\bin\Debug\net6.0\Seminar 7 Task 48.pdb
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.csproj.AssemblyReference.cache
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.AssemblyInfo.cs
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.dll
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\refint\Seminar 7 Task 48.dll
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.pdb
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\Seminar 7 Task 48.genruntimeconfig.cache
+C:\Users\Acer\Desktop\Учеба\С# Seminar 7\Seminar 7 Task 48\obj\Debug\net6.0\ref\Seminar 7 Task 48.dll
