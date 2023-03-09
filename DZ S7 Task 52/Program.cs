@@ -5,73 +5,54 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int ReadInt(string text)
+Console.WriteLine("Введите количество строк в матрице ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов в матрице ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+int[,] matrix = new int[m, n];
+
+void PrintArray(int[,] matr)
 {
-    System.Console.Write(text);
-    return Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            Console.Write($"{matr[i, j]} ");
+        }
+        Console.WriteLine();
+    }
 }
 
-int[,] GenerateMatrix(int m, int n)
+void FillArray(int[,] matr)
 {
-    int[,] matrix = new int [m, n];
-    Random rand = new Random();
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matrix[i,j] = i+j;
+            matr[i, j] = new Random().Next(1, 10);
         }
     }
-    return matrix;
 }
 
-void PrintMatrix(int[,] matr)
+void FindAverage(int[,] matr)
 {
-    for(int i = 0; i < matr.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for(int j = 0; j < matr.GetLength(1); j++)
+        int sum = 0;
+        double avr = 0;
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            System.Console.Write(matr[i,j] + " ");
+            sum = sum + matrix[j, i];
+            avr = Math.Round(Convert.ToDouble(sum) / Convert.ToDouble(m), 1);
         }
-        System.Console.WriteLine();
+
+        Console.WriteLine($"Среднее значение столбца № {i + 1} равно {avr}");
     }
 }
 
-void MeanArithmetic(int[,] matr, int n )
-{
-    
-   int [] array = new int [n];
-   int sum =0;
-   for (int k = 0; k <n; k++ )
-   {for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for(int j = 0; j < matr.GetLength(1); j++)
-        {
-            if(i < matr.GetLength(0))
-            {
-                array[k] =(sum + matr[i,j])/j ;
-            }  
-        } 
-    }
-    return ;
-    }
-}     
-
-void PrintMeanArithmetic(int[] array )
-{
-    System.Console.WriteLine("[" + string.Join(", ", array) + "]");
-}
-   
-int m = ReadInt("Введите количетсво строк матрицы: ");
-int n = ReadInt("Введите количество столбцов матрицы: ");
-
-
-var myMatrix = GenerateMatrix(m, n);
-PrintMatrix(myMatrix);
-System.Console.WriteLine();
-var array = MeanArithmetic(myMatrix, n );
-PrintMeanArithmetic(array);
-
-
-
-
+Console.WriteLine();
+FillArray(matrix);
+PrintArray(matrix);
+Console.WriteLine();
+FindAverage(matrix);
