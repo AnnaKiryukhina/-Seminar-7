@@ -5,78 +5,76 @@
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-int ReadInt(string text)
+int ReadNumber(string message) // метод ввода числа
 {
-    System.Console.Write(text);
+    Console.WriteLine(message);
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int[,] GenerateMatrix(int m, int n)
+// метод создания двумерного массив (матрицы)
+int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange = -10, int rightRange = 10) // - 10 и 10 значения по умолчанию
 {
-    int[,] matrix = new int [m, n];
+    int[,] matrix = new int[rowsCount, columnsCount];
+
     Random rand = new Random();
-    for(int i = 0; i < m; i++)
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i,j] = i+j;
+            matrix[i, j] = rand.Next(leftRange, rightRange + 1);
         }
     }
     return matrix;
 }
 
-void PrintMatrix(int[,] matr)
+// метод поиска элемента массива по его индексам
+void FindElementMatrixByIndex(int[,] matrix, int indexI, int indexJ)
 {
-    for(int i = 0; i < matr.GetLength(0); i++)
+    if (indexI < 0 || indexJ < 0)
     {
-        for(int j = 0; j < matr.GetLength(1); j++)
-        {
-            System.Console.Write(matr[i,j] + " ");
-        }
-        System.Console.WriteLine();
+        Console.WriteLine("Оба индекса должны быть >= 0");
     }
-}
-
-int Number(string text)
-{
-    System.Console.Write(text);
-    return Convert.ToInt32(Console.ReadLine());
-}
-System.Console.WriteLine(Number);
-
-
- void Search (int [,] matr, int M)
- {
-   for(int i = 0; i < matr.GetLength(0); i++)
+    else
     {
-        for(int j = 0; j < matr.GetLength(1); j++)
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            if( matr[i,j] == M)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                System.Console.WriteLine("есть");
+                if (i == indexI && j == indexJ)
+                {
+                    Console.WriteLine($"Елемент массива с индексами [{indexI},{indexJ}] = {matrix[i, j]}");
+                }
             }
-             else
-            {
-                System.Console.WriteLine("такого числа нет");
-           }
-        }    
+        }
     }
-  } 
+}
 
+// метод печати двумерного массива (матрицы) на экран
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write("{0,5:f}", $"{matrix[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
 
-int m = ReadInt("Введите количетсво строк матрицы: ");
-int n = ReadInt("Введите количество столбцов матрицы: ");
-int M = Number("Введите число: ");
+int m = ReadNumber("Введите количество строк");
+int n = ReadNumber("Введите количество столбцов");
+int[,] matr = GetMatrix(m, n);
+PrintMatrix(matr);
+int i = ReadNumber("Введите индекс строки");
+int j = ReadNumber("Введите индекс столбца");
 
-var myMatrix = GenerateMatrix(m, n);
-PrintMatrix(myMatrix);
-System.Console.WriteLine();
-
-Search (myMatrix, M);
-System.Console.WriteLine(Search);
-
-
-
-
-
-
+if (i > m - 1 || j > n - 1)
+{
+    Console.WriteLine($"Елемент в массиве с индексами [{i},{j}] отсутствует");
+}
+else
+{
+    FindElementMatrixByIndex(matr, i, j);
+}
